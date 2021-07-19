@@ -1,0 +1,36 @@
+From 88e285c13047ecae457435a076ac7d499ccb1f76 Mon Sep 17 00:00:00 2001
+From: Jan Renz <jan.renz@gmail.com>
+Date: Thu, 4 Jun 2020 19:07:03 +0200
+Subject: [PATCH] default settings changed
+
+---
+ settings.json.docker | 12 +++---------
+ 1 file changed, 3 insertions(+), 9 deletions(-)
+
+diff --git a/settings.json.docker b/settings.json.docker
+index 332e06ac..41b1846a 100644
+--- a/settings.json.docker
++++ b/settings.json.docker
+@@ -178,15 +178,10 @@
+    * https://www.npmjs.com/package/ueberdb2
+    */
+ 
+-  "dbType": "${DB_TYPE:dirty}",
+-  "dbSettings": {
+-    "host":     "${DB_HOST}",
+-    "port":     "${DB_PORT}",
+-    "database": "${DB_NAME}",
+-    "user":     "${DB_USER}",
+-    "password": "${DB_PASS}",
+-    "charset":  "${DB_CHARSET}",
+-    "filename": "${DB_FILENAME:var/dirty.db}"
++  "dbType": "${DB_TYPE:mongodb}",
++  "dbSettings" : {
++    "url": "${ETHERPAD_MONGOURL}",
++    "dbName": "${DB_NAME:etherpad}"
+   },
+ 
+   /*
+-- 
+2.29.2
+
