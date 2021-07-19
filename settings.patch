@@ -1,0 +1,21 @@
+--- orig_settings.json	2021-07-19 11:35:36.689598769 +0200
++++ settings.json	2021-07-19 11:38:18.654425327 +0200
+@@ -205,15 +205,10 @@
+    * https://www.npmjs.com/package/ueberdb2
+    */
+ 
+-  "dbType": "${DB_TYPE:dirty}",
++  "dbType": "${DB_TYPE:mongodb}",
+   "dbSettings": {
+-    "host":     "${DB_HOST:undefined}",
+-    "port":     "${DB_PORT:undefined}",
+-    "database": "${DB_NAME:undefined}",
+-    "user":     "${DB_USER:undefined}",
+-    "password": "${DB_PASS:undefined}",
+-    "charset":  "${DB_CHARSET:undefined}",
+-    "filename": "${DB_FILENAME:var/dirty.db}"
++    "url": "${ETHERPAD_MONGOURL}",
++    "dbName": "${DB_NAME:etherpad}"
+   },
+ 
+   /*

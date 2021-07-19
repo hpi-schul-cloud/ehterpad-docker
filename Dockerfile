@@ -7,9 +7,9 @@ RUN apt-get update \
     && apt-get install -y patch \
     && rm -rf /var/lib/apt/lists/*
 
-COPY 0001-default-settings-changed.patch /tmp
+COPY settings.patch /tmp
 
-RUN patch --verbose /opt/etherpad-lite/settings.json /tmp/0001-default-settings-changed.patch
+RUN patch --verbose /opt/etherpad-lite/settings.json /tmp/settings.patch
 
 # switching back to etherpad user
 USER etherpad
